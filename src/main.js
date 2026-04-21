@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
   menuContent.classList.remove('menu__content--no-transition-duration');
 });
 
-window.addEventListener('click', (e) => {
+window.addEventListener('touchstart', (e) => {
   if (e.target.closest('.menu') || e.target.closest('.burger')) {
     return;
   }

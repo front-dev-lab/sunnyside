@@ -1,0 +1,49 @@
+@use '../utils';
+
+.menu{
+  translate: 100%;
+  transition-property: translate;
+  transition-delay: utils.$amin-time;
+
+  &--active {
+    translate: 0;
+    transition-delay: 0ms;
+  }
+
+  &--no-transition-delay {
+    transition-delay: 0ms;
+  }
+
+  &__content {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    row-gap: 32px;
+    padding-block: 39px;
+    background-color: utils.$c_white;
+    transform-origin: top right;
+    transform: scale(0);
+    transition-property: transform;
+    transition-duration: utils.$amin-time;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: - utils.$triangle-size;
+      right: 0;
+      display: block;
+      height: utils.$triangle-size;
+      width: utils.$triangle-size;
+      background-color: utils.$c_white;
+      clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    }
+
+    &--active {
+      transform: scale(1);
+    }
+
+    &--no-transition-duration {
+      transition-duration: 0ms;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@use '../utils';
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  color: utils.$c_white;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include utils.adaptive-value('height', utils.$header-desktop-h, utils.$header-mobile-h);
+  }
+
+  &__right {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 47px;
+
+    @include utils.onTablet {
+      display: none;
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include utils.onTablet {
+      display: block;
+    }
+  }
+}

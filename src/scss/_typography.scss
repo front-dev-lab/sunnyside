@@ -1,0 +1,72 @@
+@use 'utils';
+
+%main-text {
+  font-family: Barlow, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -0.13px;
+}
+
+%secondary-text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: -0.13px;
+}
+
+%h1 {
+  font-family: Fraunces;
+  @include utils.adaptive-value('font-size', 56, 40);
+  font-weight: 900;
+  line-height: normal;
+  @include utils.adaptive-value('letter-spacing', 8.25, 6.25);
+}
+
+%h2 {
+  font-family: Fraunces;
+  @include utils.adaptive-value('font-size', 40, 32);
+  font-weight: 900;
+  line-height: normal;
+  @include utils.adaptive-value('letter-spacing', -0.29, -0.23);
+}
+
+%h3 {
+  font-family: Fraunces;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: -0.2px;
+}
+
+%button-text {
+  font-family: Fraunces;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 25px;
+  letter-spacing: -0.11px;
+  text-transform: uppercase;
+}
+
+%link-text {
+  font-family: Fraunces;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+%nav-text {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: -0.13px;
+}
+
+%menu-nav-text {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: -0.14px;
+}

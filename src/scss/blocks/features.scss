@@ -1,0 +1,53 @@
+@use '../utils';
+@use '../typography';
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include utils.onTablet {
+    display: block;
+  }
+
+  &__article {
+    padding-top: 398px;
+    padding-bottom: 59px;
+    @extend %secondary-text;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &--cherry {
+      color: utils.$c_green;
+      background-image: url(/img/desktop/image-graphic-design.jpg);
+
+      @include utils.onMobile {
+        background-image: url(/img/mobile/image-graphic-design.jpg);
+      }
+    }
+
+    &--orange {
+      color: utils.$c_blue;
+      background-image: url(/img/desktop/image-photography.jpg);
+
+      @include utils.onMobile {
+        background-image: url(/img/desktop/image-photography.jpg);
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 27px;
+    @extend %h3;
+    text-align: center;
+
+    &--green {
+      color: utils.$c_dark-green;
+    }
+
+    &--blue {
+      color: utils.$c_dark-blue;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@use '../utils';
+@use '../typography';
+
+.client-card {
+  display: grid;
+  justify-items: center;
+
+  &__avatar {
+    @include utils.adaptive-value('margin-bottom', 58, 32);
+    display: block;
+    width: 72px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__feedback {
+    @include utils.adaptive-value('margin-bottom', 69, 32);
+    max-width: 400px;
+    text-align: center;
+    line-height: 32px;
+    color: utils.$c_dark-gray;
+  }
+
+  &__name {
+    margin-bottom: 9px;
+    font-family: Fraunces;
+    font-weight: 900;
+    line-height: normal;
+    color: utils.$c_black;
+  }
+
+  &__profession {
+    font-size: 14px;
+    line-height: 25px;
+    letter-spacing: -0.1px;
+    color: utils.$c_light-gray;
+  }
+}

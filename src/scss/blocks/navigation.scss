@@ -1,0 +1,41 @@
+@use '../utils';
+@use '../typography';
+
+.navigation {
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 47px;
+    width: max-content;
+
+    &--column {
+      grid-auto-flow: row;
+      justify-items: center;
+      row-gap: 32px;
+    }
+
+    &--large-gap {
+      column-gap: 57px;
+    }
+  }
+
+  &__link {
+    @extend %nav-text;
+    color: utils.$c_white;
+
+    &--big {
+      @extend %menu-nav-text;
+      color: utils.$c_gray;
+    }
+
+    &--green {
+      color: utils.$c_green;
+      transition-property: color;
+      transition-duration: utils.$amin-time;
+
+      &:hover {
+        color: utils.$c_white;
+      }
+    }
+  }
+}

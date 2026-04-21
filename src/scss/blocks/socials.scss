@@ -1,0 +1,20 @@
+@use '../utils';
+
+.socials {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 28px;
+  width: max-content;
+
+  &__icon {
+    height: 20px;
+    width: 20px;
+    fill: utils.$c_green;
+    transition-property: fill;
+    transition-duration: utils.$amin-time;
+    
+    &:hover {
+      fill: utils.$c_white;
+    }
+  }
+}

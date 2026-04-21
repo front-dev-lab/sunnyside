@@ -1,0 +1,30 @@
+@use '../utils';
+@use '../typography';
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  width: 140px;
+  border-radius: 28px;
+  background-color: utils.$c_white;
+  @extend %button-text;
+  color: utils.$c_black;
+  transition-property: background-color, color;
+  transition-duration: utils.$amin-time;
+
+  &:hover {
+    background-color: #ffffff40;
+    color: utils.$c_white;
+  }
+
+  &--yellow {
+    background-color: utils.$c_light-yellow;
+
+    &:hover {
+      background-color: utils.$c_light-yellow;
+      color: utils.$c_black;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@use '../utils';
+
+$desktop-height: 33;
+$desktop-width: 170;
+
+.logo {
+  display: block;
+  @include utils.adaptive-value('height', $desktop-height, 24);
+  @include utils.adaptive-value('width', $desktop-width, 124);
+  background-image: url(/img/icons/logo.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &-dark {
+    height: $desktop-height + px;
+    width: $desktop-width + px;
+    background-image: url(/img/icons/logo-green.svg);
+  }
+}

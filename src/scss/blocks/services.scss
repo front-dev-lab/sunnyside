@@ -1,0 +1,103 @@
+@use '../utils';
+@use '../_typography';
+
+$max-padding: 110;
+
+.services {
+  display: grid;
+  grid-template-areas: 
+    "transform egg"
+    "glass stand-out";
+  grid-template-columns: 1fr 1fr;
+
+  @include utils.onTablet {
+    grid-template-areas:
+      "egg"
+      "transform"
+      "glass"
+      "stand-out";
+    grid-template-columns: 1fr;
+  }
+
+  &__article {
+    display: grid;
+    max-width: 720px;
+    @include utils.adaptive-value('padding-block', 157, 64);
+
+    @include utils.onTablet {
+      justify-items: center;
+      max-width: 100%;
+    }
+
+    &--transform {
+      grid-area: transform;
+      margin-left: auto;
+      @include utils.adaptive-value('padding-left', utils.$max-page-padding, utils.$min-page-padding);
+      @include utils.adaptive-value('padding-right', $max-padding, utils.$min-page-padding);
+    }
+
+    &--stand-out {
+      grid-area: stand-out;
+      margin-right: auto;
+      @include utils.adaptive-value('padding-right', utils.$max-page-padding, utils.$min-page-padding);
+      @include utils.adaptive-value('padding-left', $max-padding, utils.$min-page-padding);
+    }
+
+    &--transform,
+    &--stand-out {
+      @include utils.onTablet {
+        margin: 0 auto;
+        @include utils.adaptive-value('padding-inline', utils.$max-page-padding, utils.$min-page-padding);
+      }
+    }
+
+    
+  }
+
+  &__title {
+    @include utils.adaptive-value('margin-bottom', 32, 24);
+    @extend %h2;
+    color: utils.$c_black;
+
+    @include utils.onTablet {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    @include utils.adaptive-value('margin-bottom', 40, 32);
+
+    @include utils.onTablet {
+      text-align: center;
+    }
+  }
+
+
+  &__image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include utils.onTablet {
+      aspect-ratio: 375 / 312;
+    }
+
+    &--egg {
+      grid-area: egg;
+      background-image: url(/img/desktop/image-transform.jpg);
+
+      @include utils.onMobile {
+        background-image: url(/img/mobile/image-transform.jpg);
+      }
+    }
+
+    &--glass {
+      grid-area: glass;
+      background-image: url(/img/desktop/image-stand-out.jpg);
+
+      @include utils.onMobile {
+        background-image: url(/img/mobile/image-stand-out.jpg);
+      }
+    }
+  }
+}

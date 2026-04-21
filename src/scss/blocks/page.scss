@@ -1,0 +1,29 @@
+@use '../utils';
+@use '../typography';
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: utils.$c_gray;
+  
+  @extend %main-text;
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__menu {
+    position: fixed;
+    @include utils.adaptive-value('top', utils.$header-desktop-h, utils.$header-mobile-h);
+    left: 0;
+    right: 0;
+    display: none;
+    z-index: 2;
+    margin-top: utils.$triangle-size;
+
+    @include utils.onTablet {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@use '../utils';
+
+$max-padding-block: 160;
+
+.testimonials {
+  @include utils.adaptive-value('padding-top', $max-padding-block, 64);
+  @include utils.adaptive-value('padding-bottom', $max-padding-block, 86);
+
+  &__content {
+    display: grid;
+    @include utils.adaptive-value('row-gap', 81, 64);
+  }
+
+  &__title {
+    font-family: Fraunces;
+    @include utils.adaptive-value('font-size', 20, 16);
+    line-height: normal;
+    @include utils.adaptive-value('letter-spacing', 5, 4);
+    text-transform: uppercase;
+    text-align: center;
+    color: utils.$c_light-gray;
+  }
+
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 30px;
+
+    @include utils.onTablet {
+      grid-auto-flow: row;
+      row-gap: 64px;
+    }
+  }
+}

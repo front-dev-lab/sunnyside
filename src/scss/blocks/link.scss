@@ -1,0 +1,42 @@
+@use '../utils';
+@use '../typography';
+
+.link {
+  position: relative;
+  width: max-content;
+  @extend %link-text;
+  color: utils.$c_black;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -8px;
+    right: -8px;
+    z-index: -1;
+    display: block;
+    height: 10px;
+    border-radius: 4px;
+    opacity: 0.25;
+    transition-property: opacity;
+    transition-duration: utils.$amin-time;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &--yellow {
+    &::after {
+      background-color: utils.$c_yellow;
+    }
+  }
+
+  &--red {
+    &::after {
+      background-color: utils.$c_red;
+    }
+  }
+}

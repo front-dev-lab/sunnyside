@@ -1,0 +1,47 @@
+@use '../utils';
+@use '../typography';
+
+.hero {
+  background-image: url(/img/desktop/image-header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @include utils.onMobile {
+    background-image: url(/img/mobile/image-header.jpg);
+  }
+
+  &__content {
+    min-height: 600px;
+    height: 100vh;
+    max-height: 900px;
+
+    @include utils.onMobile {
+      min-height: 500px;
+      max-height: 1100px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    @include utils.adaptive-value('padding-top', utils.$header-desktop-h + 59, utils.$header-mobile-h + 56);
+    @extend %h1;
+    color: utils.$c_white;
+    text-align: center;
+    text-transform: uppercase;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 107px;
+      width: 30px;
+      @include utils.adaptive-value('margin-top', 203, 82);
+      background-image: url(/img/icons/icon-arrow-down.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}

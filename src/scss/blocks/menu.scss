@@ -1,7 +1,7 @@
 @use '../utils';
 
 .menu{
-  translate: 100%;
+  translate: -100%;
   transition-property: translate;
   transition-delay: utils.$amin-time;
 
